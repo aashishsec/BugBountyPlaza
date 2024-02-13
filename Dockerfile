@@ -4,14 +4,11 @@ FROM ubuntu:latest
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install necessary packages and upgrade existing ones
-RUN apt-get update && apt-get install -y \
-    sudo \
-    curl \
-    python3 \
-    golang-go \
-    && apt-get upgrade -y \
-    && apt-get autoremove -y \
+# Install necessary packages and upgrade existing ones  
+RUN    apt-get update
+RUN    apt-get upgrade -y 
+RUN    apt-get install -y python3 python3-pip 
+RUN    apt-get install golang-go  
 
 # Set up sudo without password prompt
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
