@@ -17,7 +17,7 @@ This tool is a Docker image that provides a pre-configured environment with vari
 
 ## Installation
 
-To use the tool, follow these steps:
+### From Github
 
 1. Clone the repository containing the Dockerfile:
    ```
@@ -33,6 +33,14 @@ To use the tool, follow these steps:
    ```
    docker build -t BugBountyPlaza .
    ```
+
+### From Docker Hub
+
+- You can pull the Docker image directly from the Docker Hub repository:
+
+```sh
+docker pull <username>/<image_name>:<tag>
+```
 
 ## Usage
 
