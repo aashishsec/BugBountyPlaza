@@ -13,7 +13,7 @@ RUN apt-get update -y && \
     apt-get -y autoremove
 
 # Install Python packages
-RUN pip3 install arjun bbot
+RUN pip3 install bbot
 
 # Clone and install BBHTv2
 RUN git clone https://github.com/aashishsec/BBHTv2.git && \
