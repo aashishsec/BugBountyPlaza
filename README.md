@@ -21,17 +21,17 @@ To use the tool, follow these steps:
 
 1. Clone the repository containing the Dockerfile:
    ```
-   git clone <repository_url>
+   git clone https://github.com/aashishsec/BugBountyPlaza.git
    ```
 
 2. Navigate to the directory containing the Dockerfile:
    ```
-   cd <repository_directory>
+   cd BugBountyPlaza
    ```
 
 3. Build the Docker image using the provided Dockerfile:
    ```
-   docker build -t <image_name> .
+   docker build -t BugBountyPlaza .
    ```
 
 ## Usage
@@ -39,7 +39,7 @@ To use the tool, follow these steps:
 Once the Docker image is built, you can run containers based on it to access the installed security testing tools. Here's how you can run a container:
 
 ```
-docker run -it <image_name>
+docker run -it BugBountyPlaza
 ```
 
 This command will start a container based on the Docker image interactively, allowing you to access the command line within the container.
