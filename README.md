@@ -48,7 +48,7 @@ docker pull aashish1947/bugbountyplaza
 Once the Docker image is built, you can run containers based on it to access the installed security testing tools. Here's how you can run a container:
 
 ```
-docker run -it BugBountyPlaza
+docker run -it bugbountyplaza
 ```
 
 This command will start a container based on the Docker image interactively, allowing you to access the command line within the container.
