@@ -5,7 +5,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install sudo and create a non-root user
-RUN apt-get -y update  && apt-get install -y sudo && apt-get -y upgrade && \
+RUN apt-get update && apt-get install -y sudo && \
     useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu && \
     echo 'ubuntu:ubuntu' | chpasswd
 
