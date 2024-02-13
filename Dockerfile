@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN    apt-get update
 RUN    apt-get upgrade -y 
 RUN    apt-get install -y python3 python3-pip 
-RUN    apt-get install golang-go  
+RUN    apt install golang-go  
 
 # Install Python packages
 RUN pip3 install arjun bbot
