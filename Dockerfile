@@ -13,12 +13,6 @@ RUN    apt-get install golang-go
 # Set up sudo without password prompt
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Set working directory
-WORKDIR /root
-
-# Copy the script and other files
-COPY . /root/
-
 # Install Python packages
 RUN pip3 install arjun bbot
 
