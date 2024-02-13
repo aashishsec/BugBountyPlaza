@@ -27,12 +27,6 @@ RUN git clone https://github.com/six2dez/reconftw && \
     ./install.sh && \
     cd ..
 
-# Install waymore
-RUN git clone https://github.com/xnl-h4ck3r/waymore.git && \
-    cd waymore && \
-    python setup.py install && \
-    cd ..
-
 # Install API Security Testing Tools
 RUN wget https://raw.githubusercontent.com/aashishsec/APISecTools/main/APITools.sh && \
     chmod +x APITools.sh && \
