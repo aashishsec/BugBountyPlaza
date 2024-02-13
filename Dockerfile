@@ -9,13 +9,14 @@ RUN apt-get update && apt-get install -y \
     sudo \
     git \
     curl \
-    python \
+    python2 \
     python-pip \
     python3 \
     python3-pip \
     rustc \
     cargo \
     nmap \
+    python-is-python3 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up sudo without password prompt
@@ -56,9 +57,5 @@ RUN wget https://raw.githubusercontent.com/aashishsec/APISecTools/main/APITools.
     chmod +x APITools.sh && \
     ./APITools.sh
 
-# Cleanup
-RUN rm -rf /root/*
-
 # Specify the command to run on container start
 CMD ["bash"]
-
