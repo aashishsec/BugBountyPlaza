@@ -31,7 +31,7 @@ This tool is a Docker image that provides a pre-configured environment with vari
 
 3. Build the Docker image using the provided Dockerfile:
    ```
-   docker build -t BugBountyPlaza .
+   docker build -t bugbountyplaza .
    ```
 
 ### From Docker Hub
