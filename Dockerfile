@@ -20,9 +20,6 @@ RUN sudo apt-get update -y && \
     sudo apt-get install -y golang-go  && \
     sudo apt-get -y autoremove
 
-# Install Python packages
-RUN sudo pip3 install bbot
-
 # Clone and install BBHTv2
 RUN sudo git clone https://github.com/aashishsec/BBHTv2.git && \
     cd BBHTv2 && \
