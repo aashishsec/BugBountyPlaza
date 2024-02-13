@@ -7,7 +7,7 @@ This tool is a Docker image that provides a pre-configured environment with vari
 
 ## Features
 
-- Includes a wide range of security testing tools such as BBHTv2, reconftw, waymore, and API Security Testing Tools.
+- Includes a wide range of security testing tools such as BBHTv2, reconftw, and API Security Testing Tools.
 - Utilizes Docker to provide a consistent and isolated environment across different systems.
 - Automates the installation process, reducing setup time and complexity.
 
