@@ -1,9 +1,6 @@
 # Use Ubuntu as base image
 FROM ubuntu:latest
 
-# Set environment variables
-ENV DEBIAN_FRONTEND noninteractive
-
 # Install necessary packages and upgrade existing ones  
 RUN    apt-get update
 RUN    apt-get upgrade -y 
