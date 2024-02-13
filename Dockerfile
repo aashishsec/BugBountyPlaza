@@ -4,20 +4,15 @@ FROM ubuntu:latest
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install necessary packages
+# Install necessary packages and upgrade existing ones
 RUN apt-get update && apt-get install -y \
     sudo \
-    git \
     curl \
-    python2 \
-    python-pip \
-    python3 \
-    python3-pip \
-    rustc \
-    cargo \
-    nmap \
-    python-is-python3 \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get upgrade -y 
+
+# Install Languages required 
+RUN apt install python3
+RUN apt install golang-go
 
 # Set up sudo without password prompt
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
@@ -29,10 +24,12 @@ WORKDIR /root
 COPY . /root/
 
 # Install Python packages
-RUN pip install arjun bbot
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install arjun bbot
 
-# Install Go tools
-RUN curl -fsSL https://raw.githubusercontent.com/golang/$(go version| awk '{print $4}')/go/src/cmd/go/install.sh | bash -s -- -v
 
 # Clone and install BBHTv2
 RUN git clone https://github.com/aashishsec/BBHTv2.git && \
