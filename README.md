@@ -13,7 +13,8 @@ This tool is a Docker image that provides a pre-configured environment with vari
 
 ## Requirements
 
-- Docker: The tool requires Docker to be installed on your system. You can download and install Docker from the official website: [Docker](https://www.docker.com/)
+- Docker: The tool requires Docker to be installed on your system.
+- You can download and install Docker from the official website: [Docker](https://www.docker.com/)
 
 ## Installation
 
