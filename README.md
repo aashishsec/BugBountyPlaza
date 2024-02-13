@@ -39,7 +39,7 @@ This tool is a Docker image that provides a pre-configured environment with vari
 - You can pull the Docker image directly from the Docker Hub repository:
 
 ```sh
-docker pull <username>/<image_name>:<tag>
+docker pull aashish1947/bugbountyplaza
 ```
 
 ## Usage
