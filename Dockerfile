@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y python3 python3-pip && \
-    -y golang-go  && \
+    apt-get install -y golang-go  && \
     apt-get -y autoremove
 
 # Install Python packages
