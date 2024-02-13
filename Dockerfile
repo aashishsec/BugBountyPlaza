@@ -5,8 +5,8 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 # Update packages and install dependencies
-RUN apt-get update && \
-    apt-get upgrade && \
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
     apt-get install -y python3 python3-pip && \
     golang-go  && \
     apt-get autoremove 
