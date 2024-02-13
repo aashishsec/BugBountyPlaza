@@ -8,11 +8,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
     sudo \
     curl \
-    && apt-get upgrade -y 
-
-# Install Languages required 
-RUN apt install python3
-RUN apt install golang-go
+    python3 \
+    golang-go \
+    && apt-get upgrade -y \
+    && apt-get autoremove -y \
 
 # Set up sudo without password prompt
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
@@ -24,12 +23,7 @@ WORKDIR /root
 COPY . /root/
 
 # Install Python packages
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip3 install arjun bbot
-
+RUN pip3 install arjun bbot
 
 # Clone and install BBHTv2
 RUN git clone https://github.com/aashishsec/BBHTv2.git && \
