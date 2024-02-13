@@ -10,9 +10,6 @@ RUN    apt-get upgrade -y
 RUN    apt-get install -y python3 python3-pip 
 RUN    apt-get install golang-go  
 
-# Set up sudo without password prompt
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
 # Install Python packages
 RUN pip3 install arjun bbot
 
