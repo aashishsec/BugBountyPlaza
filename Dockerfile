@@ -4,33 +4,44 @@ FROM ubuntu:latest
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 
+# Install sudo and create a non-root user
+RUN apt-get -y update  && apt-get install -y sudo && apt-get -y upgrade && \
+    useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu && \
+    echo 'ubuntu:ubuntu' | chpasswd
+
+# Configure sudo to allow the user to execute commands without password
+RUN echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 # Update packages and install dependencies
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y git curl wget && \
-    apt-get install -y python3 python3-pip && \
-    apt-get install -y golang-go  && \
-    apt-get -y autoremove
+RUN sudo apt-get update -y && \
+    sudo apt-get upgrade -y && \
+    sudo apt-get install -y git curl wget && \
+    sudo apt-get install -y python3 python3-pip && \
+    sudo apt-get install -y golang-go  && \
+    sudo apt-get -y autoremove
 
 # Install Python packages
-RUN pip3 install bbot
+RUN sudo pip3 install bbot
 
 # Clone and install BBHTv2
-RUN git clone https://github.com/aashishsec/BBHTv2.git && \
+RUN sudo git clone https://github.com/aashishsec/BBHTv2.git && \
     cd BBHTv2 && \
-    ./bbhtv2.sh && \
+    sudo ./bbhtv2.sh && \
     cd ..
 
 # Clone and install reconftw
-RUN git clone https://github.com/six2dez/reconftw && \
+RUN sudo git clone https://github.com/six2dez/reconftw && \
     cd reconftw && \
-    ./install.sh && \
+    sudo ./install.sh && \
     cd ..
 
 # Install API Security Testing Tools
-RUN wget https://raw.githubusercontent.com/aashishsec/APISecTools/main/APITools.sh && \
-    chmod +x APITools.sh && \
-    ./APITools.sh
+RUN sudo wget https://raw.githubusercontent.com/aashishsec/APISecTools/main/APITools.sh && \
+    sudo chmod +x APITools.sh && \
+    sudo ./APITools.sh
+
+# Specify the user to run commands within the container
+USER ubuntu
 
 # Specify the command to run on container start
 CMD ["bash"]
