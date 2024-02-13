@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Update packages and install dependencies
 RUN apt-get update -y && \
     apt-get upgrade -y && \
+    apt-get install -y git curl wget && \
     apt-get install -y python3 python3-pip && \
     apt-get install -y golang-go  && \
     apt-get -y autoremove
