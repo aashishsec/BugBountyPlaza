@@ -34,11 +34,6 @@ RUN sudo git clone https://github.com/six2dez/reconftw && \
     sudo ./install.sh && \
     cd ..
 
-# Install API Security Testing Tools
-RUN sudo wget https://raw.githubusercontent.com/aashishsec/APISecTools/main/APITools.sh && \
-    sudo chmod +x APITools.sh && \
-    sudo ./APITools.sh
-
 # Specify the user to run commands within the container
 USER ubuntu
 
