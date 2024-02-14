@@ -12,12 +12,14 @@ RUN apt-get update && apt-get install -y sudo && \
 # Configure sudo to allow the user to execute commands without password
 RUN echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+
 # Update packages and install dependencies
 RUN sudo apt-get update -y && \
     sudo apt-get upgrade -y && \
     sudo apt-get install -y git curl wget && \
     sudo apt-get install -y python3 python3-pip && \
     sudo apt-get install -y golang-go  && \
+    sudo /bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
     sudo apt-get -y autoremove
 
 # Clone and install BBHTv2
