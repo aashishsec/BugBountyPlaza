@@ -60,7 +60,6 @@ The Docker image includes the following security testing tools:
 
 - BBHTv2 Tools
 - reconftw Tools
-- API Security Testing Tools (APITools.sh)
 
 ## Contributing
 
