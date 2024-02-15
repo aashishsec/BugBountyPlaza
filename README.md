@@ -23,17 +23,17 @@ This tool is a Docker image that provides a pre-configured environment with vari
 
 1. Clone the repository containing the Dockerfile:
    ```
-   git clone https://github.com/aashishsec/BugBountyPlaza.git
+   git clone https://github.com/aashishsec/HackHive.git
    ```
 
 2. Navigate to the directory containing the Dockerfile:
    ```
-   cd BugBountyPlaza
+   cd HackHive
    ```
 
 3. Build the Docker image using the provided Dockerfile:
    ```
-   docker build -t bugbountyplaza .
+   docker build -t hackhive .
    ```
 
 ### From Docker Hub
@@ -41,7 +41,7 @@ This tool is a Docker image that provides a pre-configured environment with vari
 - You can pull the Docker image directly from the Docker Hub repository:
 
 ```sh
-docker pull aashish1947/bugbountyplaza
+docker pull aashish1947/hackhive
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ docker pull aashish1947/bugbountyplaza
 Once the Docker image is built, you can run containers based on it to access the installed security testing tools. Here's how you can run a container:
 
 ```
-docker run -it bugbountyplaza
+docker run -it hackhive
 ```
 
 This command will start a container based on the Docker image interactively, allowing you to access the command line within the container.
